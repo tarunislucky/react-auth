@@ -7,7 +7,7 @@ function AuthenticationPage() {
 export async function action({ request }) {
   //  get the query params and set mode 
   const searchParams = new URL(request.url).searchParams;
-  const mode = searchParams.get('mode') || 'login';
+  const mode = searchParams.get('mode') || 'signup';
   // if mode is neighter login nor signup, throw error
   if (mode !== 'login' && mode !== 'signup') {
     throw json({ message: 'Unsupported mode.' }, { status: 422 });
